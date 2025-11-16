@@ -1,0 +1,38 @@
+name: Update Bot Stats
+
+on:
+  schedule:
+    # Run every 2 minutes
+    - cron: '*/2 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Download latest bot_stats.json from Render
+      run: |
+        # Replace with your actual Render URL
+        curl -f -o bot_stats.json "https://genos-p73n.onrender.com/bot_stats.json" || echo "Download failed"
+        
+    - name: Check if file was downloaded successfully
+      id: check_file
+      run: |
+        if [ -f "bot_stats.json" ] && [ -s "bot_stats.json" ]; then
+          echo "file_exists=true" >> $GITHUB_OUTPUT
+        else
+          echo "file_exists=false" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push if changed
+      if: steps.check_file.outputs.file_exists == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add bot_stats.json
+        git diff --staged --quiet || git commit -m "🤖 Auto-update bot stats"
+        git push
