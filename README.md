@@ -2,7 +2,7 @@
 
 A sleek, real-time status dashboard for the Genos Discord bot. Monitor bot status, server statistics, and deployment updates in one beautiful interface.
 
-![Genos Bot Status](https://cdn.discordapp.com/avatars/1282229251726114856/a_969e0dd68a7438c112c40ae92dab1b4b.gif?size=1024![image](https://github.com/user-attachments/assets/7fc07eb4-0e15-40ec-85c6-cf3e9215c433)
+![Genos Bot Status]([https://cdn.discordapp.com/avatars/1282229251726114856/a_969e0dd68a7438c112c40ae92dab1b4b.gif?size=1024![image](https://github.com/user-attachments/assets/7fc07eb4-0e15-40ec-85c6-cf3e9215c433](https://cdn.discordapp.com/attachments/1420262033915641876/1439554320365387907/IMG_3256.gif?ex=691af0ef&is=69199f6f&hm=36c5be487e78dabd5880b955dd17441ef82dd7d92a846c83fda3ff142f96c1c9&))
 )
 
 ## 🌐 Live Dashboard
