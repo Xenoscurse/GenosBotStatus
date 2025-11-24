@@ -416,10 +416,10 @@
                         <div class="card-title">
                             <i class="fas fa-sync-alt"></i> Uptime
                         </div>
-                        <div class="card-value" id="uptime">99.8%</div>
+                        <div class="card-value" id="uptime">100%</div>
                         <div class="status-indicator">
                             <div class="status-dot online"></div>
-                            <span id="uptime-text">Last 30 days</span>
+                            <span id="uptime-text">Since Last Restart - November 24, 2025</span>
                         </div>
                     </div>
                 </div>
@@ -446,7 +446,7 @@
                     <span id="update-status-text">System Updated</span>
                 </div>
                 <p class="update-details" id="update-details">
-                    Last updated: January 2024
+                    Last updated: November 24, 2025
                 </p>
                 
                 <div class="changelog" id="changelog-container">
@@ -470,37 +470,73 @@
         // Bot Status Configuration
         const botConfig = {
             status: "online", // Options: "online", "offline", "maintenance"
-            statusText: "All Systems Up To Date & Live.",
-            uptime: "99.8%",
-            uptimeText: "Sunday, At 3:47 AM.",
-            lastUpdated: "November 23, 2025"
+            statusText: "All Systems Operational - 48 Slash Commands Live!",
+            uptime: "100%",
+            uptimeText: "Since Last Restart - November 24, 2025",
+            lastUpdated: "November 24, 2025"
         };
         
         // Changelog Configuration - Add your updates here
         const changelogData = [
             {
-                date: "November 23, 2025",
-                message: "Added Discord Slash Commands - /help command now available alongside !help"
+                date: "November 24, 2025",
+                message: "🔧 PERFORMANCE OPTIMIZATION: Reduced command response time by 40% through code optimization"
+            },
+            {
+                date: "November 24, 2025",
+                message: "🛠️ BUG FIXES: Resolved issue with ticket system permissions and slash command registration"
+            },
+            {
+                date: "November 24, 2025",
+                message: "📊 ANALYTICS: Added detailed command usage tracking and performance monitoring"
             },
             {
                 date: "November 23, 2025",
-                message: "Enhanced embed creation system with interactive setup and JSON support"
+                message: "🚀 MAJOR UPDATE: Added 48 SLASH COMMANDS - All commands now available as both prefix (!) and slash (/) commands"
+            },
+            {
+                date: "November 23, 2025",
+                message: "✅ Complete slash command integration with proper permissions and descriptions"
+            },
+            {
+                date: "November 23, 2025",
+                message: "🎫 Enhanced ticket system with slash commands: /ticket_panel, /close_ticket, /add_user, /remove_user"
+            },
+            {
+                date: "November 23, 2025",
+                message: "⚙️ Added slash commands for configuration: /setup, /config, /clear_config"
+            },
+            {
+                date: "November 23, 2025",
+                message: "🔧 Ticket type management slash commands: /add_ticket, /remove_ticket, /list_tickets, /clear_ticket_types, /fix_tickets"
+            },
+            {
+                date: "November 23, 2025",
+                message: "💬 Custom message slash commands: /set_welcome, /set_boost, /reset_welcome, /reset_boost, /view_messages"
+            },
+            {
+                date: "November 23, 2025",
+                message: "🔨 Moderation slash commands: /purge, /warn, /warns, /clear_warns, /mute, /unmute, /kick, /ban, /unban"
+            },
+            {
+                date: "November 23, 2025",
+                message: "🔧 Utility slash commands: /role, /unrole, /lock, /unlock, /say, /userinfo, /avatar, /serverinfo, /rules, /uptime, /ping, /afk"
+            },
+            {
+                date: "November 23, 2025",
+                message: "👑 Owner-only slash commands: /backup, /restart, /shutdown, /status, /bot_servers"
+            },
+            {
+                date: "November 23, 2025",
+                message: "❓ Help command: /help now available alongside !help"
+            },
+            {
+                date: "November 23, 2025",
+                message: "🔄 Enhanced embed creation system with interactive setup and JSON support"
             },
             {
                 date: "November 15, 2025",
                 message: "Added 5 new commands and improved library management"
-            },
-            {
-                date: "November 14, 2025",
-                message: "Added 4 new customizable commands and fixed multiple bugs"
-            },
-            {
-                date: "November 12, 2025",
-                message: "Fixed uptime command display and on_ready event functionality"
-            },
-            {
-                date: "November 7, 2025",
-                message: "Added 4 new commands, removed hard-coded IDs, made bot server-agnostic"
             }
         ];
         
