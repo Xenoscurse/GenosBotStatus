@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genos - Upcoming Discord Application</title>
+    <title>Genos Bot - Premium Discord Bot</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -44,7 +44,7 @@
         }
         
         header {
-            padding: 40px 0;
+            padding: 40px 0 20px 0;
             border-bottom: 1px solid #333;
             display: flex;
             flex-direction: column;
@@ -104,6 +104,51 @@
             animation: fadeInUp 1s ease-out 0.6s forwards;
         }
         
+        .nav-lines {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.8s forwards;
+        }
+        
+        .nav-line {
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, #666, transparent);
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 25px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.9s forwards;
+        }
+        
+        .nav-btn {
+            background: transparent;
+            color: #bbb;
+            border: 1px solid #444;
+            padding: 10px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: #666;
+            transform: translateY(-2px);
+        }
+        
         main {
             flex: 1;
             padding: 40px 0;
@@ -123,7 +168,7 @@
             display: block;
             width: 100%;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.7s forwards;
+            animation: fadeInUp 1s ease-out 1.1s forwards;
         }
         
         .section-title::after {
@@ -154,11 +199,11 @@
             backdrop-filter: blur(10px);
             text-align: center;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 0.9s forwards;
+            animation: fadeInUp 1s ease-out 1.3s forwards;
         }
         
         .status-card:nth-child(2) {
-            animation-delay: 1.1s;
+            animation-delay: 1.5s;
         }
         
         .status-card:hover {
@@ -234,7 +279,7 @@
             text-align: center;
             backdrop-filter: blur(10px);
             opacity: 0;
-            animation: fadeInUp 1s ease-out 1.3s forwards;
+            animation: fadeInUp 1s ease-out 1.7s forwards;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
@@ -272,13 +317,13 @@
             cursor: pointer;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            animation: fadeInUp 1s ease-out 1.5s forwards;
+            animation: fadeInUp 1s ease-out 1.9s forwards;
         }
         
         .invite-btn.support {
             background: linear-gradient(135deg, #555555, #777777);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            animation-delay: 1.7s;
+            animation-delay: 2.1s;
         }
         
         .invite-btn:hover {
@@ -304,7 +349,7 @@
             border: 1px solid #444;
             backdrop-filter: blur(10px);
             opacity: 0;
-            animation: fadeInUp 1s ease-out 1.9s forwards;
+            animation: fadeInUp 1s ease-out 2.3s forwards;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
@@ -391,7 +436,7 @@
             color: #888;
             font-size: 14px;
             opacity: 0;
-            animation: fadeInUp 1s ease-out 2.1s forwards;
+            animation: fadeInUp 1s ease-out 2.5s forwards;
         }
         
         .credit {
@@ -472,6 +517,15 @@
                 max-width: 250px;
                 justify-content: center;
             }
+            
+            .nav-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-btn {
+                width: 200px;
+            }
         }
     </style>
 </head>
@@ -484,6 +538,19 @@
                     <h1 class="logo">Genos</h1>
                     <p class="subtitle">A Multi-Purpose Discord Application</p>
                 </div>
+            </div>
+            
+            <!-- Three decorative lines -->
+            <div class="nav-lines">
+                <div class="nav-line"></div>
+                <div class="nav-line"></div>
+                <div class="nav-line"></div>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="nav-buttons">
+                <a href="#changelog" class="nav-btn">Changelogs</a>
+                <a href="#learn-more" class="nav-btn">Learn More</a>
             </div>
         </header>
         
@@ -530,7 +597,7 @@
                 </div>
             </section>
             
-            <section class="update-info">
+            <section class="update-info" id="changelog">
                 <h3 class="update-title">Latest Updates</h3>
                 <div class="update-status">
                     <div class="update-dot updated" id="update-dot"></div>
@@ -542,6 +609,26 @@
                 
                 <div class="changelog" id="changelog-container">
                     <!-- Changelog items will be inserted here by JavaScript -->
+                </div>
+            </section>
+            
+            <!-- Learn More Section -->
+            <section class="update-info" id="learn-more" style="display: none;">
+                <h3 class="update-title">About Genos Bot</h3>
+                <div class="update-details">
+                    <p>Genos is a powerful multi-purpose Discord bot designed to enhance your server experience with premium features.</p>
+                    <br>
+                    <p><strong>Key Features:</strong></p>
+                    <ul style="text-align: left; margin: 15px 0; padding-left: 20px;">
+                        <li>48+ Slash Commands</li>
+                        <li>Advanced Moderation Tools</li>
+                        <li>Ticket System</li>
+                        <li>Custom Welcome Messages</li>
+                        <li>Server Analytics</li>
+                        <li>Role Management</li>
+                        <li>And much more!</li>
+                    </ul>
+                    <p>All features are completely free to use with no limitations.</p>
                 </div>
             </section>
         </main>
@@ -687,7 +774,7 @@
                 `;
                 
                 // Add staggered animation delay for each changelog item
-                changelogItem.style.animationDelay = `${2.3 + (index * 0.1)}s`;
+                changelogItem.style.animationDelay = `${2.7 + (index * 0.1)}s`;
                 
                 changelogContainer.appendChild(changelogItem);
             });
@@ -706,11 +793,34 @@
             document.getElementById('refresh-time').textContent = timeString;
         }
         
+        // Navigation functionality
+        function setupNavigation() {
+            const changelogBtn = document.querySelector('a[href="#changelog"]');
+            const learnMoreBtn = document.querySelector('a[href="#learn-more"]');
+            const changelogSection = document.getElementById('changelog');
+            const learnMoreSection = document.getElementById('learn-more');
+            
+            changelogBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                changelogSection.style.display = 'block';
+                learnMoreSection.style.display = 'none';
+                changelogSection.scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            learnMoreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                learnMoreSection.style.display = 'block';
+                changelogSection.style.display = 'none';
+                learnMoreSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        
         // Initialize the dashboard
         function initDashboard() {
             updateBotStatus();
             populateChangelog();
             updateRefreshTime();
+            setupNavigation();
         }
         
         // Update the refresh time every second
