@@ -149,6 +149,12 @@
             transform: translateY(-2px);
         }
         
+        .nav-btn.active {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border-color: #888;
+        }
+        
         main {
             flex: 1;
             padding: 40px 0;
@@ -533,7 +539,7 @@
     <div class="container">
         <header>
             <div class="profile-container">
-                <img src="https://cdn.discordapp.com/attachments/1439069035504599101/1443803585522438288/Genos3.gif?ex=692a665f&is=692914df&hm=b3e3bbd7ced529d530f919449bc6c51184ccee6d42437f540695695b8862be17gif?size=1024" alt="Genos Profile" class="profile-pic">
+                <img src="https://cdn.discordapp.com/attachments/1439069035504599101/1443803585522438288/Genos3.gif" alt="Genos Profile" class="profile-pic">
                 <div class="logo-container">
                     <h1 class="logo">Genos</h1>
                     <p class="subtitle">A Multi-Purpose Discord Application</p>
@@ -542,8 +548,8 @@
             
             <!-- Navigation buttons -->
             <div class="nav-buttons">
-                <a href="#changelog" class="nav-btn">Changelogs</a>
-                <a href="#learn-more" class="nav-btn">Learn More</a>
+                <a href="#changelog" class="nav-btn active" data-target="changelog">Changelogs</a>
+                <a href="#learn-more" class="nav-btn" data-target="learn-more">Learn More</a>
             </div>
         </header>
         
@@ -606,7 +612,7 @@
             </section>
             
             <!-- Learn More Section -->
-            <section class="update-info" id="learn-more" style="display: none;">
+            <section class="update-info" id="learn-more">
                 <h3 class="update-title">About Genos</h3>
                 <div class="update-details">
                     <p>Genos is a powerful multi-purpose Discord bot designed to enhance your server experience with premium features.</p>
@@ -788,23 +794,32 @@
         
         // Navigation functionality
         function setupNavigation() {
-            const changelogBtn = document.querySelector('a[href="#changelog"]');
-            const learnMoreBtn = document.querySelector('a[href="#learn-more"]');
-            const changelogSection = document.getElementById('changelog');
-            const learnMoreSection = document.getElementById('learn-more');
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const sections = {
+                changelog: document.getElementById('changelog'),
+                'learn-more': document.getElementById('learn-more')
+            };
             
-            changelogBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                changelogSection.style.display = 'block';
-                learnMoreSection.style.display = 'none';
-                changelogSection.scrollIntoView({ behavior: 'smooth' });
-            });
+            // Initially hide the learn more section
+            sections['learn-more'].style.display = 'none';
             
-            learnMoreBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                learnMoreSection.style.display = 'block';
-                changelogSection.style.display = 'none';
-                learnMoreSection.scrollIntoView({ behavior: 'smooth' });
+            navButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = button.getAttribute('data-target');
+                    
+                    // Update active button
+                    navButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    // Show/hide sections
+                    Object.keys(sections).forEach(key => {
+                        sections[key].style.display = key === target ? 'block' : 'none';
+                    });
+                    
+                    // Scroll to the active section
+                    sections[target].scrollIntoView({ behavior: 'smooth' });
+                });
             });
         }
         
