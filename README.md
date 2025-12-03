@@ -7,7 +7,7 @@ A sleek, real-time status dashboard for the Genos Discord bot. Monitor bot statu
 ## 🌐 Live Dashboard
 
 **Access the dashboard here:**  
-[https://genos.gg/](https://xenoscurse.github.io/GenosWebsite/)
+[Genos Website](https://xenoscurse.github.io/GenosWebsite/)
 
 ## 📊 Features
 
